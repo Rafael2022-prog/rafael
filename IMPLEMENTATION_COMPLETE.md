@@ -93,7 +93,7 @@ cd dashboard
 railway up
 
 # Add custom domain
-# dashboard.rafael.ai → Railway URL
+# dashboard.rafaelabs.xyz → Railway URL
 ```
 
 **Option 2: Heroku**
@@ -117,9 +117,9 @@ docker run -p 5000:5000 rafael-dashboard
 
 ### Production URLs (Suggested)
 
-- **Main**: https://dashboard.rafael.ai
-- **Staging**: https://dashboard-staging.rafael.ai
-- **Demo**: https://demo.rafael.ai
+- **Main**: https://dashboard.rafaelabs.xyz
+- **Staging**: https://dashboard-staging.rafaelabs.xyz
+- **Demo**: https://demo.rafaelabs.xyz
 
 ---
 
@@ -277,9 +277,9 @@ docker run -p 5000:5000 rafael-dashboard
 #### Setup Email
 ```bash
 # Create email addresses:
-beta@rafael.ai
-support@rafael.ai
-info@rafael.ai
+beta@rafaelabs.xyz
+support@rafaelabs.xyz
+info@rafaelabs.xyz
 ```
 
 #### Setup Communication
@@ -304,7 +304,7 @@ vercel --prod
 netlify deploy --prod
 
 # Add custom domain
-# beta.rafael.ai → Vercel/Netlify
+# beta.rafaelabs.xyz → Vercel/Netlify
 ```
 
 #### Setup Form Backend
@@ -322,7 +322,7 @@ netlify deploy --prod
 
 ### Recommended Domain
 
-**Primary**: **rafael.ai** ⭐
+**Primary**: **rafaelabs.xyz** ⭐
 
 **Why**:
 - Short and memorable
@@ -333,19 +333,19 @@ netlify deploy --prod
 ### Complete Architecture
 
 ```
-rafael.ai (Main Domain)
-├── www.rafael.ai → Landing page (Vercel)
-├── dashboard.rafael.ai → Web Dashboard (Railway)
-├── api.rafael.ai → REST API (Railway)
-├── docs.rafael.ai → Documentation (ReadTheDocs)
-├── beta.rafael.ai → Beta Program (Vercel)
-└── demo.rafael.ai → Live Demo (DigitalOcean)
+rafaelabs.xyz (Main Domain)
+├── www.rafaelabs.xyz → Landing page (Vercel)
+├── dashboard.rafaelabs.xyz → Web Dashboard (Railway)
+├── api.rafaelabs.xyz → REST API (Railway)
+├── docs.rafaelabs.xyz → Documentation (ReadTheDocs)
+├── beta.rafaelabs.xyz → Beta Program (Vercel)
+└── demo.rafaelabs.xyz → Live Demo (DigitalOcean)
 ```
 
 ### Cost Breakdown
 
 **Annual Costs**:
-- Domain (rafael.ai): $50-100
+- Domain (rafaelabs.xyz): $10-15
 - Railway (Dashboard): $60-84
 - Google Workspace (Email): $72
 - **Total**: ~$182-256/year
@@ -358,10 +358,10 @@ rafael.ai (Main Domain)
 
 | Service | Platform | Cost | URL |
 |---------|----------|------|-----|
-| Landing Page | Vercel | FREE | rafael.ai |
-| Dashboard | Railway | $5/mo | dashboard.rafael.ai |
-| Beta Page | Vercel | FREE | beta.rafael.ai |
-| Docs | ReadTheDocs | FREE | docs.rafael.ai |
+| Landing Page | Vercel | FREE | rafaelabs.xyz |
+| Dashboard | Railway | $5/mo | dashboard.rafaelabs.xyz |
+| Beta Page | Vercel | FREE | beta.rafaelabs.xyz |
+| Docs | ReadTheDocs | FREE | docs.rafaelabs.xyz |
 | CDN/DNS | Cloudflare | FREE | - |
 | Email | Google Workspace | $6/mo | - |
 
@@ -418,7 +418,7 @@ rafael.ai (Main Domain)
 
 #### Beta Program
 - [ ] Deploy landing page
-- [ ] Setup email (beta@rafael.ai)
+- [ ] Setup email (beta@rafaelabs.xyz)
 - [ ] Create Slack/Discord
 - [ ] Setup application form
 - [ ] Test submission flow
@@ -432,7 +432,7 @@ rafael.ai (Main Domain)
 ### This Week
 
 #### Domain
-- [ ] Register rafael.ai
+- [x] Domain registered (rafaelabs.xyz)
 - [ ] Setup Cloudflare
 - [ ] Configure DNS
 - [ ] Setup SSL certificates
@@ -481,18 +481,18 @@ rafael.ai (Main Domain)
 
 ### Dashboard
 - **Local**: http://localhost:5000
-- **Production**: https://dashboard.rafael.ai (after deployment)
-- **API Docs**: https://dashboard.rafael.ai/api/status
+- **Production**: https://dashboard.rafaelabs.xyz (after deployment)
+- **API Docs**: https://dashboard.rafaelabs.xyz/api/status
 
 ### Beta Program
-- **Landing Page**: https://beta.rafael.ai (after deployment)
-- **Application**: https://beta.rafael.ai#apply
-- **Email**: beta@rafael.ai
+- **Landing Page**: https://beta.rafaelabs.xyz (after deployment)
+- **Application**: https://beta.rafaelabs.xyz#apply
+- **Email**: beta@rafaelabs.xyz
 
 ### Video Demo
 - **Script**: VIDEO_DEMO_SCRIPT.md
 - **YouTube**: (after upload)
-- **Website**: https://rafael.ai/demo
+- **Website**: https://rafaelabs.xyz/demo
 
 ---
 
@@ -545,7 +545,7 @@ rafael.ai (Main Domain)
    - Rewards system
 
 4. **Domain Strategy** ✅
-   - Recommended domain (rafael.ai)
+   - Primary domain (rafaelabs.xyz)
    - Complete architecture
    - Cost breakdown
    - Hosting recommendations
@@ -597,14 +597,14 @@ rafael.ai (Main Domain)
 ## 📝 Next Actions
 
 ### Priority 1: Domain & Hosting
-1. Register rafael.ai
+1. Domain registered (rafaelabs.xyz)
 2. Setup Cloudflare
 3. Configure DNS
 4. Deploy dashboard to Railway
 5. Deploy beta page to Vercel
 
 ### Priority 2: Beta Program
-1. Setup beta@rafael.ai email
+1. Setup beta@rafaelabs.xyz email
 2. Create Slack/Discord
 3. Announce beta program
 4. Start accepting applications

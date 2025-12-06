@@ -138,12 +138,12 @@ python app.py
 ### Call to Action (4:45 - 5:00)
 **Visual**: Website and GitHub links  
 **Voiceover**:
-> "Ready to make your systems antifragile? Visit rafael.ai to join our beta program, or check out the code on GitHub. Let's build systems that learn from chaos."
+> "Ready to make your systems antifragile? Visit rafaelabs.xyz to join our beta program, or check out the code on GitHub. Let's build systems that learn from chaos."
 
 **On-screen text**:
-- 🌐 rafael.ai
+- 🌐 rafaelabs.xyz
 - 💻 github.com/Rafael2022-prog/rafael
-- 📧 beta@rafael.ai
+- 📧 beta@rafaelabs.xyz
 - ⭐ Star us on GitHub
 
 **Final frame**:
@@ -151,7 +151,7 @@ python app.py
 🔱 RAFAEL Framework
 "What doesn't kill the system, makes it smarter"
 
-rafael.ai | Join Beta Program
+rafaelabs.xyz | Join Beta Program
 ```
 
 ---
@@ -274,7 +274,7 @@ failures and evolving automatically.
 
 No manual fixes. Just autonomous resilience.
 
-rafael.ai - Join the beta"
+rafaelabs.xyz - Join the beta"
 ```
 
 ### 60-Second Version (Twitter/LinkedIn)
@@ -291,7 +291,7 @@ evolve based on real failures.
 From fintech to gaming to blockchain - make your systems antifragile.
 
 pip install rafael-framework
-rafael.ai"
+rafaelabs.xyz"
 ```
 
 ### 2-Minute Version (Product Hunt)

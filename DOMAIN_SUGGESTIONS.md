@@ -9,16 +9,16 @@
 
 ### Option 1: Primary Domains (Most Professional)
 
-#### 1. **rafael.ai** ⭐ RECOMMENDED
-- **Why**: Short, memorable, AI-focused
-- **Cost**: ~$50-100/year
-- **Availability**: Check at Namecheap, GoDaddy
+#### 1. **rafaelabs.xyz** ⭐ PRIMARY DOMAIN
+- **Why**: Professional, tech-focused, memorable
+- **Cost**: ~$10-15/year (.xyz domain)
+- **Status**: REGISTERED
 - **Best for**: Main production site
 - **Example URLs**:
-  - https://rafael.ai
-  - https://dashboard.rafael.ai
-  - https://docs.rafael.ai
-  - https://api.rafael.ai
+  - https://rafaelabs.xyz
+  - https://dashboard.rafaelabs.xyz
+  - https://docs.rafaelabs.xyz
+  - https://api.rafaelabs.xyz
 
 #### 2. **rafael-framework.com**
 - **Why**: Descriptive, professional
@@ -64,13 +64,13 @@
 ### Production Setup
 
 ```
-rafael.ai (Main Domain)
-├── www.rafael.ai → Landing page
-├── dashboard.rafael.ai → Web Dashboard
-├── api.rafael.ai → REST API
-├── docs.rafael.ai → Documentation
-├── beta.rafael.ai → Beta Program
-└── demo.rafael.ai → Live Demo
+rafaelabs.xyz (Main Domain)
+├── www.rafaelabs.xyz → Landing page
+├── dashboard.rafaelabs.xyz → Web Dashboard
+├── api.rafaelabs.xyz → REST API
+├── docs.rafaelabs.xyz → Documentation
+├── beta.rafaelabs.xyz → Beta Program
+└── demo.rafaelabs.xyz → Live Demo
 ```
 
 ### Subdomain Structure
@@ -92,7 +92,7 @@ rafael.ai (Main Domain)
 
 | Item | Cost (USD/year) | Provider |
 |------|-----------------|----------|
-| **Domain (rafael.ai)** | $50-100 | Namecheap |
+| **Domain (rafaelabs.xyz)** | $10-15 | Namecheap |
 | **SSL Certificate** | FREE | Let's Encrypt |
 | **Hosting (Dashboard)** | $60-84 | Railway/Heroku |
 | **CDN** | FREE | Cloudflare |
@@ -120,7 +120,7 @@ rafael.ai (Main Domain)
 #### Option A: Railway.app ⭐ RECOMMENDED
 - **Pros**: Easy deployment, auto-scaling, $5/month
 - **Deployment**: Connect GitHub, auto-deploy
-- **URL**: `dashboard.rafael.ai`
+- **URL**: `dashboard.rafaelabs.xyz`
 - **Command**: 
   ```bash
   railway up
@@ -142,7 +142,7 @@ rafael.ai (Main Domain)
 #### Option A: Vercel ⭐ RECOMMENDED
 - **Pros**: FREE, fast CDN, auto-deploy
 - **Deployment**: Connect GitHub
-- **URL**: `rafael.ai`
+- **URL**: `rafaelabs.xyz`
 - **Features**: Edge functions, analytics
 
 #### Option B: Netlify
@@ -159,7 +159,7 @@ rafael.ai (Main Domain)
 #### Option A: ReadTheDocs ⭐ RECOMMENDED
 - **Pros**: FREE, built for docs
 - **URL**: `rafael.readthedocs.io`
-- **Custom domain**: `docs.rafael.ai`
+- **Custom domain**: `docs.rafaelabs.xyz`
 
 #### Option B: GitBook
 - **Pros**: Beautiful UI, FREE tier
@@ -182,10 +182,10 @@ rafael.ai (Main Domain)
 ### Recommended: Google Workspace
 - **Cost**: $6/user/month
 - **Emails**:
-  - info@rafael.ai
-  - support@rafael.ai
-  - beta@rafael.ai
-  - hello@rafael.ai
+  - info@rafaelabs.xyz
+  - support@rafaelabs.xyz
+  - beta@rafaelabs.xyz
+  - hello@rafaelabs.xyz
 
 ### Alternative: Zoho Mail
 - **Cost**: FREE (up to 5 users)
@@ -239,8 +239,8 @@ rafael.ai (Main Domain)
 ### Step 1: Register Domain
 ```bash
 # Go to Namecheap or GoDaddy
-# Search for: rafael.ai
-# Purchase domain ($50-100/year)
+# Search for: rafaelabs.xyz
+# Domain already registered ($10-15/year)
 ```
 
 ### Step 2: Setup Cloudflare
@@ -263,7 +263,7 @@ cd dashboard
 railway up
 
 # Add custom domain in Railway dashboard
-# Point dashboard.rafael.ai to Railway
+# Point dashboard.rafaelabs.xyz to Railway
 ```
 
 ### Step 4: Deploy Landing Page to Vercel
@@ -276,7 +276,7 @@ cd landing
 vercel --prod
 
 # Add custom domain
-# Point rafael.ai to Vercel
+# Point rafaelabs.xyz to Vercel
 ```
 
 ### Step 5: Setup DNS (Cloudflare)
@@ -294,15 +294,15 @@ CNAME   beta        [Beta URL]             Auto
 ## 🌟 Recommended Final Setup
 
 ### Production URLs
-- **Main Site**: https://rafael.ai
-- **Dashboard**: https://dashboard.rafael.ai
-- **API**: https://api.rafael.ai
-- **Docs**: https://docs.rafael.ai
-- **Beta**: https://beta.rafael.ai
-- **Demo**: https://demo.rafael.ai
+- **Main Site**: https://rafaelabs.xyz
+- **Dashboard**: https://dashboard.rafaelabs.xyz
+- **API**: https://api.rafaelabs.xyz
+- **Docs**: https://docs.rafaelabs.xyz
+- **Beta**: https://beta.rafaelabs.xyz
+- **Demo**: https://demo.rafaelabs.xyz
 
 ### Technology Stack
-- **Domain**: rafael.ai (Namecheap)
+- **Domain**: rafaelabs.xyz (Namecheap)
 - **DNS/CDN**: Cloudflare (FREE)
 - **Landing**: Vercel (FREE)
 - **Dashboard**: Railway ($5/month)

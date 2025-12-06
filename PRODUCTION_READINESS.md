@@ -163,7 +163,7 @@
 #### Dashboard Deployment
 - **Local**: `python dashboard/app.py`
 - **Production**: Railway, Heroku, DigitalOcean
-- **Domain**: dashboard.rafael.ai (recommended)
+- **Domain**: dashboard.rafaelabs.xyz (recommended)
 
 ---
 
@@ -671,7 +671,7 @@ python app.py
 ### Community
 - **Issues**: GitHub Issues
 - **Discussions**: GitHub Discussions (future)
-- **Email**: info@rafael.ai (after domain setup)
+- **Email**: info@rafaelabs.xyz
 
 ### Professional Support
 - **Consulting**: Available for enterprise

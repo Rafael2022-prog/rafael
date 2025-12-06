@@ -44,12 +44,14 @@ def get_status():
     for module_id in demo_modules:
         genome = rafael.genomes.get(module_id)
         if genome:
+            # Calculate average fitness from genes
+            avg_fitness = sum(g.fitness_score for g in genome.genes) / len(genome.genes) if genome.genes else 0.0
             modules.append({
                 'id': module_id,
-                'fitness': genome.fitness_score,
+                'fitness': avg_fitness,
                 'generation': genome.generation,
                 'genes_count': len(genome.genes),
-                'status': 'healthy' if genome.fitness_score > 0.7 else 'warning' if genome.fitness_score > 0.4 else 'critical'
+                'status': 'healthy' if avg_fitness > 0.7 else 'warning' if avg_fitness > 0.4 else 'critical'
             })
     
     return jsonify({
@@ -68,9 +70,10 @@ def get_modules():
     for module_id in demo_modules:
         genome = rafael.genomes.get(module_id)
         if genome:
+            avg_fitness = sum(g.fitness_score for g in genome.genes) / len(genome.genes) if genome.genes else 0.0
             modules.append({
                 'id': module_id,
-                'fitness': genome.fitness_score,
+                'fitness': avg_fitness,
                 'generation': genome.generation,
                 'genes': [
                     {
@@ -90,10 +93,11 @@ def evolve_module(module_id):
         rafael.evolve_module(module_id)
         genome = rafael.genomes.get(module_id)
         
+        avg_fitness = sum(g.fitness_score for g in genome.genes) / len(genome.genes) if genome.genes else 0.0
         return jsonify({
             'success': True,
             'module_id': module_id,
-            'new_fitness': genome.fitness_score,
+            'new_fitness': avg_fitness,
             'generation': genome.generation
         })
     except Exception as e:
