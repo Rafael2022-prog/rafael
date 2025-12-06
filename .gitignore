@@ -38,6 +38,9 @@ rafael.config.json
 rafael_audit.log
 rafael_chaos_report.json
 vault_data/
+
+# PyPI credentials (IMPORTANT: Never commit!)
+.pypirc
 *.rafael
 
 # Testing
