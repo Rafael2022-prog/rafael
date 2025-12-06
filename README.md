@@ -1,6 +1,20 @@
 # 🔱 RAFAEL: Resilience-Adaptive Framework for Autonomous Evolution & Learning
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-purple?style=for-the-badge&logo=rocket)](https://demo.rafaelabs.xyz)
+[![Dashboard](https://img.shields.io/badge/Dashboard-Live-blue?style=for-the-badge&logo=chart-line)](https://dashboard.rafaelabs.xyz)
+[![API Docs](https://img.shields.io/badge/API-Docs-green?style=for-the-badge&logo=book)](https://api.rafaelabs.xyz)
+[![Website](https://img.shields.io/badge/Website-rafaelabs.xyz-orange?style=for-the-badge&logo=globe)](https://rafaelabs.xyz)
+
 > **"Sistem yang tidak mati oleh kekacauan, akan lahir kembali lebih cerdas darinya."**
+
+## 🌐 Live Resources
+
+- **🏠 Main Site**: [rafaelabs.xyz](https://rafaelabs.xyz) - Bilingual landing page (EN/ID)
+- **📊 Dashboard**: [dashboard.rafaelabs.xyz](https://dashboard.rafaelabs.xyz) - Real-time monitoring
+- **🔌 API Docs**: [api.rafaelabs.xyz](https://api.rafaelabs.xyz) - Interactive API documentation
+- **🎮 Demo**: [demo.rafaelabs.xyz](https://demo.rafaelabs.xyz) - Try chaos testing live
+- **🚀 Beta Program**: [beta.rafaelabs.xyz](https://beta.rafaelabs.xyz) - Join early adopters
+- **💻 GitHub**: [github.com/Rafael2022-prog/rafael](https://github.com/Rafael2022-prog/rafael)
 
 ## 🧩 Filosofi Inti
 
@@ -195,15 +209,43 @@ RAFAEL follows strict ethical guidelines:
 
 ## 📚 Documentation
 
+### Online Documentation
+- **[API Documentation](https://api.rafaelabs.xyz)** - Interactive API reference with live examples
+- **[Dashboard Guide](https://dashboard.rafaelabs.xyz)** - Real-time monitoring and management
+- **[Interactive Demo](https://demo.rafaelabs.xyz)** - Try chaos testing in your browser
+
+### Local Documentation
 - [Core Concepts](./docs/core-concepts.md)
-- [API Reference](./docs/api-reference.md)
 - [Architecture Deep Dive](./docs/architecture.md)
 - [Best Practices](./docs/best-practices.md)
 - [Community Patterns](./docs/community-patterns.md)
+- [Deployment Guide](./SERVER_DEPLOYMENT_GUIDE.md)
 
 ## 🤝 Contributing
 
 We welcome contributions! See [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+## 🚀 Production Status
+
+RAFAEL Framework is **LIVE** and running in production:
+
+- ✅ **All Systems Operational** - 100% uptime
+- ✅ **SSL Secured** - All domains protected with Let's Encrypt
+- ✅ **Auto-Scaling** - Ready for production traffic
+- ✅ **Monitored** - Real-time health checks
+- ✅ **Tested** - Comprehensive test suite (19/19 passing)
+
+### Quick Links
+```bash
+# Test the API
+curl https://api.rafaelabs.xyz/api/status
+
+# Try chaos testing
+Visit: https://demo.rafaelabs.xyz
+
+# Monitor your systems
+Visit: https://dashboard.rafaelabs.xyz
+```
 
 ## 📄 License
 
