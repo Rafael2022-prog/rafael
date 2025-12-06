@@ -176,12 +176,12 @@ def get_patterns():
     patterns = []
     for pattern in vault.patterns.values():
         patterns.append({
-            'id': pattern.pattern_id,
+            'id': pattern.id,
             'name': pattern.name,
             'category': pattern.category.value,
             'description': pattern.description,
-            'effectiveness': pattern.effectiveness_score,
-            'use_count': pattern.use_count
+            'reliability': pattern.reliability_score,
+            'usage_count': pattern.usage_count
         })
     
     return jsonify({'patterns': patterns})
@@ -201,11 +201,11 @@ def search_patterns():
     patterns = []
     for pattern in results:
         patterns.append({
-            'id': pattern.pattern_id,
+            'id': pattern.id,
             'name': pattern.name,
             'category': pattern.category.value,
             'description': pattern.description,
-            'effectiveness': pattern.effectiveness_score
+            'reliability': pattern.reliability_score
         })
     
     return jsonify({'patterns': patterns})
