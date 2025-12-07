@@ -1,11 +1,10 @@
 name: Release
 
-# Temporarily disabled - will be enabled when ready for PyPI
 on:
-  workflow_dispatch:  # Manual trigger only
-  # push:
-  #   tags:
-  #     - 'v*'
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:  # Manual trigger
 
 jobs:
   release:
@@ -50,7 +49,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Publish to PyPI
+      if: secrets.PYPI_API_TOKEN != ''
+      continue-on-error: true
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-      run: twine upload dist/*
+      run: twine upload dist/* || echo "PyPI publish skipped - token not configured"
