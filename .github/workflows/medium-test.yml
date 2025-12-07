@@ -1,0 +1,181 @@
+name: Medium Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  medium-test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.9', '3.11']
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Cache pip packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest pytest-cov pytest-asyncio pytest-timeout
+        pip install click
+        pip install -e . || pip install .
+    
+    - name: Run core module tests
+      run: |
+        pytest tests/ -v -k "test_rafael or test_genome or test_mutation" \
+          --cov=core --cov-report=term-missing \
+          --timeout=120 --asyncio-mode=auto
+      continue-on-error: false
+    
+    - name: Run chaos forge tests
+      run: |
+        pytest tests/ -v -k "test_chaos or test_simulator" \
+          --cov=chaos_forge --cov-report=term-missing \
+          --timeout=120 --asyncio-mode=auto
+      continue-on-error: true
+    
+    - name: Run vault tests
+      run: |
+        pytest tests/ -v -k "test_vault or test_pattern" \
+          --cov=vault --cov-report=term-missing \
+          --timeout=120 --asyncio-mode=auto
+      continue-on-error: true
+    
+    - name: Run guardian tests
+      run: |
+        pytest tests/ -v -k "test_guardian or test_approval" \
+          --cov=guardian --cov-report=term-missing \
+          --timeout=120 --asyncio-mode=auto
+      continue-on-error: true
+    
+    - name: Run decorator tests
+      run: |
+        pytest tests/test_decorators.py -v \
+          --cov=core --cov-report=term-missing \
+          --timeout=120 --asyncio-mode=auto
+      continue-on-error: true
+    
+    - name: Test summary
+      if: always()
+      run: |
+        echo "==================================="
+        echo "Medium Tests Summary"
+        echo "==================================="
+        echo "Python Version: ${{ matrix.python-version }}"
+        echo "Core tests: Required (fail-fast)"
+        echo "Other tests: Optional (continue-on-error)"
+        echo "==================================="
+
+  quick-lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install flake8
+      run: |
+        pip install flake8
+    
+    - name: Quick lint check
+      run: |
+        # Check for critical errors only
+        flake8 core chaos_forge vault guardian devkit \
+          --count --select=E9,F63,F7,F82 \
+          --show-source --statistics \
+          --exclude=__pycache__,.pytest_cache,build,dist
+      continue-on-error: true
+    
+    - name: Check code complexity
+      run: |
+        flake8 core chaos_forge vault guardian devkit \
+          --count --max-complexity=15 \
+          --statistics \
+          --exclude=__pycache__,.pytest_cache,build,dist
+      continue-on-error: true
+
+  import-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install package
+      run: |
+        pip install click
+        pip install -e . || pip install .
+    
+    - name: Test all imports
+      run: |
+        python -c "from core.rafael_engine import RafaelCore; print('✅ Core Engine')"
+        python -c "from core.persistence import GenomePersistence; print('✅ Persistence')"
+        python -c "from core.error_handling import get_error_handler; print('✅ Error Handling')"
+        python -c "from chaos_forge.simulator import ChaosForge; print('✅ Chaos Forge')"
+        python -c "from vault.resilience_vault import ResilienceVault; print('✅ Vault')"
+        python -c "from guardian.guardian_layer import GuardianLayer; print('✅ Guardian')"
+        python -c "from devkit.cli import cli; print('✅ CLI')"
+    
+    - name: Test basic functionality
+      run: |
+        python -c "from core.rafael_engine import RafaelCore; core = RafaelCore(app_name='test'); core.register_module('test_module'); print('✅ Basic functionality works')"
+
+  coverage-report:
+    runs-on: ubuntu-latest
+    needs: medium-test
+    if: always()
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install pytest pytest-cov pytest-asyncio
+        pip install click
+        pip install -e . || pip install .
+    
+    - name: Generate coverage report
+      run: |
+        pytest tests/ --cov=core --cov=chaos_forge --cov=vault --cov=guardian \
+          --cov-report=xml --cov-report=term \
+          --timeout=180 --asyncio-mode=auto || true
+    
+    - name: Display coverage summary
+      run: |
+        if [ -f coverage.xml ]; then
+          echo "✅ Coverage report generated"
+          pip install coverage
+          coverage report --skip-empty || true
+        else
+          echo "⚠️ Coverage report not generated"
+        fi
