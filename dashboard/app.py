@@ -30,7 +30,28 @@ guardian = GuardianLayer()
 # Sample data for demo
 demo_modules = ["payment-service", "auth-service", "notification-service"]
 for module in demo_modules:
-    rafael.register_module(module)
+    genome = rafael.register_module(module)
+    # Add initial genes with some fitness scores for demo
+    from core.rafael_engine import Gene, ResilienceStrategy
+    import random
+    
+    # Add 3 sample genes with random fitness
+    strategies = [
+        ResilienceStrategy.RETRY_ADAPTIVE,
+        ResilienceStrategy.CIRCUIT_BREAKER,
+        ResilienceStrategy.FALLBACK
+    ]
+    
+    for i, strategy in enumerate(strategies):
+        gene = Gene(
+            id=f"{module}-gene-{i}",
+            strategy=strategy,
+            parameters={"timeout": 30, "max_retries": 3},
+            fitness_score=random.uniform(0.6, 0.95),  # Random fitness for demo
+            success_count=random.randint(50, 200),
+            failure_count=random.randint(5, 20)
+        )
+        genome.add_gene(gene)
 
 @app.route('/')
 def index():
@@ -175,13 +196,17 @@ def get_patterns():
     """Get all resilience patterns"""
     patterns = []
     for pattern in vault.patterns.values():
+        # Ensure reliability_score is a valid number
+        reliability = pattern.reliability_score if hasattr(pattern, 'reliability_score') and pattern.reliability_score is not None else 0.85
+        usage_count = pattern.usage_count if hasattr(pattern, 'usage_count') and pattern.usage_count is not None else 0
+        
         patterns.append({
             'id': pattern.id,
             'name': pattern.name,
             'category': pattern.category.value,
             'description': pattern.description,
-            'reliability': pattern.reliability_score,
-            'usage_count': pattern.usage_count
+            'reliability': float(reliability),  # Ensure it's a float
+            'usage_count': int(usage_count)  # Ensure it's an int
         })
     
     return jsonify({'patterns': patterns})
@@ -200,12 +225,14 @@ def search_patterns():
     
     patterns = []
     for pattern in results:
+        reliability = pattern.reliability_score if hasattr(pattern, 'reliability_score') and pattern.reliability_score is not None else 0.85
+        
         patterns.append({
             'id': pattern.id,
             'name': pattern.name,
             'category': pattern.category.value,
             'description': pattern.description,
-            'reliability': pattern.reliability_score
+            'reliability': float(reliability)
         })
     
     return jsonify({'patterns': patterns})
