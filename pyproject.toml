@@ -4,16 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rafael-framework"
-version = "1.0.0"
+version = "1.2.0"
 description = "Resilience-Adaptive Framework for Autonomous Evolution & Learning"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "Proprietary"}
 authors = [
-    {name = "RAFAEL Framework", email = "info@rafael-framework.io"}
+    {name = "RAFAEL Team", email = "info@rafaelabs.xyz"}
 ]
 maintainers = [
-    {name = "RAFAEL Framework", email = "info@rafael-framework.io"}
+    {name = "RAFAEL Framework", email = "info@rafaelabs.xyz"}
 ]
 keywords = [
     "resilience",

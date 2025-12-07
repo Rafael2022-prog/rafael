@@ -245,7 +245,7 @@ Join our beta program: https://beta.rafaelabs.xyz
 
 Proprietary License - All Rights Reserved
 
-For licensing inquiries: licensing@rafael-framework.io
+For licensing inquiries: licensing@rafaelabs.xyz
 
 ---
 

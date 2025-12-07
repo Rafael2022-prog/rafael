@@ -321,7 +321,7 @@ See CONTRIBUTING.md for guidelines.
 
 Proprietary License - All Rights Reserved
 
-Contact licensing@rafael-framework.io for licensing inquiries
+Contact licensing@rafaelabs.xyz for licensing inquiries
 
 ## 🎉 Achievements
 
@@ -368,7 +368,7 @@ RAFAEL approach:
 ## 📞 Contact
 
 - **GitHub**: github.com/rafael-framework/rafael
-- **Email**: info@rafael-framework.io
+- **Email**: info@rafaelabs.xyz
 - **Discord**: discord.gg/rafael
 - **Twitter**: @rafael_framework
 

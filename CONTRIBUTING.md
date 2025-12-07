@@ -160,7 +160,7 @@ Contributors will be:
 
 - Open an issue
 - Join our Discord
-- Email: contribute@rafael-framework.io
+- Email: contribute@rafaelabs.xyz
 
 ---
 

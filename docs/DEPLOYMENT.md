@@ -462,7 +462,7 @@ If you encounter issues:
 
 1. Check [Troubleshooting](#troubleshooting) section
 2. Review [GitHub Issues](https://github.com/Rafael2022-prog/rafael/issues)
-3. Contact: info@rafael-framework.io
+3. Contact: info@rafaelabs.xyz
 
 ---
 

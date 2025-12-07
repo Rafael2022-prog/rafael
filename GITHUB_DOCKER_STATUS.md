@@ -338,7 +338,7 @@ curl http://localhost:8080/health
 - **Architecture**: docs/ARCHITECTURE.md
 
 ### Contact
-- **Email**: info@rafael-framework.io
+- **Email**: info@rafaelabs.xyz
 - **Issues**: https://github.com/Rafael2022-prog/rafael/issues
 - **Discussions**: https://github.com/Rafael2022-prog/rafael/discussions
 

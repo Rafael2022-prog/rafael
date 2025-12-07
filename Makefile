@@ -1,44 +1,57 @@
 # RAFAEL Framework Makefile
 # Convenient commands for development and deployment
 
-.PHONY: help install test lint format clean build deploy docker
+.PHONY: help install test lint format clean build upload docs coverage security
 
 help:
-	@echo "🔱 RAFAEL Framework - Available Commands"
-	@echo "========================================"
+	@echo "RAFAEL Framework - Makefile Commands"
 	@echo ""
 	@echo "Development:"
-	@echo "  make install     - Install dependencies"
-	@echo "  make test        - Run tests"
+	@echo "  make install     - Install development dependencies"
+	@echo "  make test        - Run all tests"
+	@echo "  make test-unit   - Run unit tests only"
+	@echo "  make test-integration - Run integration tests"
+	@echo "  make coverage    - Generate coverage report"
 	@echo "  make lint        - Run linters"
 	@echo "  make format      - Format code"
-	@echo "  make clean       - Clean build artifacts"
+	@echo "  make security    - Run security scans"
 	@echo ""
-	@echo "Deployment:"
-	@echo "  make build       - Build package"
-	@echo "  make deploy      - Deploy to PyPI"
-	@echo "  make docker      - Build Docker image"
-	@echo "  make docker-push - Push Docker image"
+	@echo "Build & Deploy:"
+	@echo "  make build       - Build distribution packages"
+	@echo "  make upload      - Upload to PyPI"
+	@echo "  make docs        - Build documentation"
 	@echo ""
-	@echo "Examples:"
-	@echo "  make run-fintech - Run fintech example"
-	@echo "  make run-game    - Run game example"
-	@echo ""
+	@echo "Cleanup:"
+	@echo "  make clean       - Remove build artifacts"
+	@echo "  make clean-all   - Remove all generated files"
 
 install:
-	@echo "📦 Installing dependencies..."
-	pip install -e ".[dev]"
-	@echo "✅ Installation complete"
+	pip install --upgrade pip
+	pip install -e .[dev]
+	pip install -r requirements-dev.txt
 
 test:
-	@echo "🧪 Running tests..."
-	python -m pytest tests/ -v --cov=core --cov=chaos_forge --cov=vault --cov=guardian
-	@echo "✅ Tests complete"
+	pytest tests/ -v --cov=core --cov=chaos_forge --cov=vault --cov=guardian --cov=devkit \
+		--cov-report=html --cov-report=term-missing --asyncio-mode=auto
+
+test-unit:
+	pytest tests/ -v -m "not integration" --asyncio-mode=auto
+
+test-integration:
+	pytest tests/test_integration.py -v --asyncio-mode=auto
+
+coverage:
+	pytest tests/ --cov=core --cov=chaos_forge --cov=vault --cov=guardian --cov=devkit \
+		--cov-report=html --cov-report=xml --cov-report=term-missing
+	@echo "Coverage report generated in htmlcov/index.html"
 
 lint:
-	@echo "🔍 Running linters..."
-	flake8 core/ chaos_forge/ vault/ guardian/ devkit/ --max-line-length=100
-	mypy core/ --ignore-missing-imports || true
+	@echo "Running flake8..."
+	flake8 core chaos_forge vault guardian devkit --max-line-length=100
+	@echo "Running mypy..."
+	mypy core chaos_forge vault guardian devkit --ignore-missing-imports
+	@echo "Running pylint..."
+	pylint core chaos_forge vault guardian devkit --disable=C0111,R0903 || true
 	@echo "✅ Linting complete"
 
 format:

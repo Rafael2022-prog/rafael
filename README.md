@@ -251,7 +251,7 @@ Visit: https://dashboard.rafaelabs.xyz
 
 Proprietary License - All Rights Reserved. See [LICENSE](./LICENSE) for details.
 
-For licensing inquiries, contact: licensing@rafael-framework.io
+For licensing inquiries, contact: licensing@rafaelabs.xyz
 
 ## 🌟 Philosophy
 

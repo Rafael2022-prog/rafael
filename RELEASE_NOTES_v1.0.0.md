@@ -192,7 +192,7 @@ We welcome contributions! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guideline
 
 Proprietary License - All Rights Reserved
 
-For licensing inquiries: licensing@rafael-framework.io
+For licensing inquiries: licensing@rafaelabs.xyz
 
 ---
 

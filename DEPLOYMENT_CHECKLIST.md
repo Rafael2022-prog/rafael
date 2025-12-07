@@ -360,7 +360,7 @@ If you encounter issues:
    - `DEPLOYMENT_SUMMARY.md`
    - `DEPLOYMENT_COMPLETE.md`
 3. Check GitHub Issues
-4. Contact: info@rafael-framework.io
+4. Contact: info@rafaelabs.xyz
 
 ---
 

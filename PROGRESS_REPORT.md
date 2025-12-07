@@ -355,7 +355,7 @@ Performance:
 
 **Contact**:
 - Email: contact@rafaelabs.xyz
-- Licensing: licensing@rafael-framework.io
+- Licensing: licensing@rafaelabs.xyz
 
 ---
 
