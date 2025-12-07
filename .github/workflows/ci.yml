@@ -1,12 +1,14 @@
 name: CI/CD Pipeline
 
+# Temporarily disabled - will be enabled when tests are ready
 on:
-  push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main, develop ]
-  release:
-    types: [ published ]
+  workflow_dispatch:  # Manual trigger only
+  # push:
+  #   branches: [ main, develop ]
+  # pull_request:
+  #   branches: [ main, develop ]
+  # release:
+  #   types: [ published ]
 
 jobs:
   test:

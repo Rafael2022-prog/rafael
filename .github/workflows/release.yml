@@ -1,9 +1,11 @@
 name: Release
 
+# Temporarily disabled - will be enabled when ready for PyPI
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:  # Manual trigger only
+  # push:
+  #   tags:
+  #     - 'v*'
 
 jobs:
   release:
